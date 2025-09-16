@@ -1,16 +1,29 @@
 // Oppgave 1: Telle fra 1 til 10
-for (let i = 1; i <= 10; i++) {
+
+// a) While-løkke
+let i = 1;
+while (i <= 10) {
     console.log(i);
     document.write(i + " ");
+    i++;
 }
 document.write("<br><br>");
+
+// b) For-løkke
+for (let j = 1; j <= 10; j++) {
+    console.log(j);
+    document.write(j + " ");
+}
+document.write("<br><br>");
+
 
 // Oppgave 2: Passord
 const riktigPassord = "abc123";
 
 // a) Uendelig til riktig passord
-while (prompt("Skriv inn passord:") !== riktigPassord) {
-    // Loop until correct
+let passord = prompt("Skriv inn passord:");
+while (passord !== riktigPassord) {
+    passord = prompt("Feil passord, prøv igjen:");
 }
 document.write("<p>Riktig passord! Du er logget inn.</p>");
 console.log("Riktig passord!");
@@ -18,7 +31,8 @@ console.log("Riktig passord!");
 // b) Maks 3 forsøk
 let innlogget = false;
 for (let forsok = 1; forsok <= 3; forsok++) {
-    if (prompt(`Skriv inn passord (forsøk ${forsok} av 3):`) === riktigPassord) {
+    let input = prompt(`Skriv inn passord (forsøk ${forsok} av 3):`);
+    if (input === riktigPassord) {
         innlogget = true;
         break;
     }
@@ -31,6 +45,7 @@ document.write(
 console.log(
     innlogget ? "Innlogging vellykket!" : "For mange forsøk. Tilgang nektet."
 );
+
 
 // Oppgave 3: Oddetall / Partall
 const valg = prompt("Vil du se 'oddetall' eller 'partall' fra 0 til 100?");
@@ -45,6 +60,7 @@ if (valg === "oddetall" || valg === "partall") {
     console.log("Ugyldig valg");
 }
 document.write("<br><br>");
+
 
 // Oppgave 4: Gangetabellen
 document.write("<h3>Gangetabellen</h3>");
